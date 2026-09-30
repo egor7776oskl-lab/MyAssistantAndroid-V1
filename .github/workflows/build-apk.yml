@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir project
           unzip -q MyAssistant_Android_V1_Build.zip -d project
-                - name: Configure Java 17
+      - name: Configure Java 17
         working-directory: project
         run: printf '%s\n' 'allprojects {' '  tasks.withType(org.gradle.api.tasks.compile.JavaCompile).configureEach {' '    sourceCompatibility = "17"' '    targetCompatibility = "17"' '  }' '}' > jvm.gradle
       
