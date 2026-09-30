@@ -20,6 +20,7 @@ jobs:
                 - name: Configure Java 17
         working-directory: project
         run: printf '%s\n' 'allprojects {' '  tasks.withType(org.gradle.api.tasks.compile.JavaCompile).configureEach {' '    sourceCompatibility = "17"' '    targetCompatibility = "17"' '  }' '}' > jvm.gradle
+      
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
