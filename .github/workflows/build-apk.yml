@@ -16,7 +16,7 @@ jobs:
       - name: Unpack project ZIP
         run: |
           mkdir project
-          unzip -q MyAssistant_Android_V1_Build.zip -d project
+          unzip -q MyAssistantAndroid-V1-Local-Qwen3.zip -d project
       - name: Configure Java 17
         working-directory: project
         run: python3 -c 'from pathlib import Path; p=Path("app/build.gradle.kts"); s=p.read_text(); s=s.replace("android {", "android {\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_17\n        targetCompatibility = JavaVersion.VERSION_17\n    }\n    kotlinOptions {\n        jvmTarget = \"17\"\n        freeCompilerArgs += \"-opt-in=androidx.compose.material3.ExperimentalMaterial3Api\"\n    }\n", 1); p.write_text(s)'
